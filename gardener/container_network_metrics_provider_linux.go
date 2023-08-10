@@ -31,7 +31,6 @@ func (l *SysFSContainerNetworkMetricsProvider) Get(logger lager.Logger, handle s
 
 	ifName, found := l.propertyManager.Get(handle, ContainerInterfaceKey)
 	if !found || ifName == "" {
-		log.Debug("missing-interface-name", lager.Data{"handle": handle})
 		return nil, nil
 	}
 
